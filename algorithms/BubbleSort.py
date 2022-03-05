@@ -1,6 +1,6 @@
-from utils.ISortingAlgorithm import ISortingAlgorithm
+from utils.SortingAlgorithm import SortingAlgorithm
 
-class BubbleSort(ISortingAlgorithm):
+class BubbleSort(SortingAlgorithm):
   def sort(self, data: list[int]) -> None:
     n = len(data)
     # Traverse through all elements

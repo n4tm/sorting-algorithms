@@ -1,6 +1,6 @@
-from utils.ISortingAlgorithm import ISortingAlgorithm
+from utils.SortingAlgorithm import SortingAlgorithm
 
-class InsertionSort(ISortingAlgorithm):
+class InsertionSort(SortingAlgorithm):
   def sort(self, data: list[int]) -> None:
     # Traverse through 1 to len(data)
     for i in range(1, len(data)):

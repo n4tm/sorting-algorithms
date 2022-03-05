@@ -1,6 +1,6 @@
-from utils.ISortingAlgorithm import ISortingAlgorithm
+from utils.SortingAlgorithm import SortingAlgorithm
 
-class SelectionSort(ISortingAlgorithm):
+class SelectionSort(SortingAlgorithm):
   def sort(self, data: list[int]) -> None:
     # Traverse through all array elements
     for i in range(len(data)):
