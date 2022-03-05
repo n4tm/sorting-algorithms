@@ -1,16 +1,17 @@
-from utils.ISortingAlgorithm import ISortingAlgorithm
-from algorithms.SortingAlgorithms import *
-from random import shuffle
-
-test_data = [3, 6, 2, 23, 93, -2, -6, 2, 0, 2, 5, 0, 65, -234, 123, 24, 54]
-
-def test_sorting_algorithm(algorithm: ISortingAlgorithm) -> None:
-  print(f'--- {algorithm.__class__.__name__} ---')
-  shuffle(test_data)
-  print(f'shuffled data: {test_data}')
-  algorithm.sort(test_data)
-  print(f'sorted data: {test_data}\n')
+from utils.ComparisonChart import ComparisonChart
+from utils.SortingAlgorithm import SortingAlgorithm
+from SortingAlgorithms import *
+from random import randint
 
 if __name__ == '__main__':
-  for algorithm in [bubbleSort, selectionSort, insertionSort, mergeSort, quickSort]: 
-    test_sorting_algorithm(algorithm)
+  # Generates a list of size x filled with random integers between -y and y
+  random_data_with_size: list[int] = lambda x, y : [randint(-y, y) for _ in range(x)]
+
+  # Generates a list of 6 lists of sizes 10, 10², 10³, 10⁴, 10⁵, 10⁶, respectively. 
+  # Each one filled with random integers between -1000 and 1000.
+  data_list: list[list[int]] = [random_data_with_size(pow(10, x), 1000) for x in range(1, 4)]
+
+  algorithms: list[SortingAlgorithm] = [bubbleSort, selectionSort, insertionSort, mergeSort]
+
+  ComparisonChart.sort_data_and_plot_comparisons(data_list, algorithms)
+  ComparisonChart.show()

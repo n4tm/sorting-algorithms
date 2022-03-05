@@ -1,6 +1,6 @@
-from utils.ISortingAlgorithm import ISortingAlgorithm
+from utils.SortingAlgorithm import SortingAlgorithm
 
-class MergeSort(ISortingAlgorithm):
+class MergeSort(SortingAlgorithm):
   def sort(self, data: list[int]) -> None:
     n = len(data)
     if n <= 1:
